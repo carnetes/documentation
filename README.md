@@ -283,7 +283,7 @@ Die Instanzen eines Lambda-Dienstes stellen eine Art Gruppierung von Funktionen 
 
 Eine Lambda-Funktion folgt immer dem gleichen Aufbau, wie im folgenden Beispiel dargestellt:
 
-\`\`\`typescript
+```typescript
 import { Injectable, Action, Init, Destroy } from '@carnetes/core';
 import { HttpRequest, HttpResponse } from '@carnetes/runtime';
 import { ActionHandler, Logger } from '@carnetes/lambda';
@@ -353,7 +353,7 @@ export class Lambda extends ActionHandler {
     }
 
 }
-\`\`\`
+```
 
 #### Einsprungpunkte
 
@@ -382,9 +382,9 @@ Es gibt drei Einsprungpunkte, die je nach Zustand der Lambda-Funktion aufgerufen
 
 ##### Dateibasierte Bearbeitung
 - Der Funktionscode befindet sich unter dem Verzeichnis:
-\`\`\`
+```
 carnetes/package/@carnetes/lambda/.instance/{instance_name}/actions/{func_name}
-\`\`\`
+```
 
 - Die Funktionalität wird in der Datei 'lambda.ts' bearbeitet.
 - Alternativ kann der gesamte Actions-Ordner ausgetauscht werden, um ein Update durchzuführen.
@@ -485,7 +485,7 @@ Die Grafik zeigt die verschiedenen Komponenten und Prozesse innerhalb des Authen
 
 Das folgende Beispiel zeigt eine Implementierung einer Authentifikationsroute mit PIN. Dieses Verfahren wird **aus Sicherheitsgründen nicht empfohlen**, da es potenzielle Risiken birgt. Es dient jedoch zur Demonstration, wie eigene Erweiterungen unter **carnetes/authentication** integriert werden können.
 
-\`\`\`typescript
+```typescript
 @Route({
     path: "/start"
 })
@@ -523,7 +523,7 @@ public route(request: HttpRequest, response: HttpResponse): Promise<void | OpenI
     });
     return promise;
 }
-\`\`\`
+```
 
 ### Sicherheitshinweis zur PIN-basierten Authentifizierung
 
@@ -580,7 +580,7 @@ Das Authorization-Framework von Carnetes ermöglicht die einfache Erweiterung de
 
 Der folgende Code zeigt, wie die Authorization erweitert werden kann. Diese Erweiterung kann unter dem Pfad **carnetes/authorization/** abgelegt werden oder über die Weboberfläche von Carnetes einfach bearbeitet werden:
 
-\`\`\`typescript
+```typescript
 import { Injectable } from '@carnetes/core';
 import { Authorizator, OAuth2Client, Logger, OpenIDUserInfo } from '@carnetes/authorization';
 
@@ -601,7 +601,7 @@ export class Authorization extends Authorizator {
     }
 
 }
-\`\`\`
+```
 
 # Webapp Broker
 
@@ -656,13 +656,13 @@ Die Konfiguration eines Dienstes in Carnetes ist sowohl über die Benutzeroberfl
 
 - **Über das Dateisystem**:
   - Dienste befinden sich unter dem Pfad:
-    \`\`\`
+    ```
     carnetes\package\@socketservice
-    \`\`\`
+    ```
   - Die Konfigurationen der jeweiligen Dienste werden unter:
-    \`\`\`
+    ```
     {service}\.instance\{instancename}\carnetes.json
-    \`\`\`
+    ```
     gespeichert.
   - In dieser Datei können je nach Art des Dienstes spezifische Einstellungen wie **Zertifikate**, **Brokereinstellungen** oder **Verbindungen** festgelegt werden.
 
@@ -694,18 +694,18 @@ Die Konfiguration eines Dienstes in Carnetes ist sowohl über die Benutzeroberfl
   - Unter **Broker > Security / Authentication** kann die jeweilige Instanz direkt bearbeitet werden.
   - Die Loginseite liegt als Referenz im 'www' Ordner der jeweiligen Methode und kann individuell gestaltet werden.
   - Beispiel für ein Input-Element:
-    \`\`\`html
+    ```html
     <input id="pin" name="pin" type="password" placeholder="Pin" inputmode="none" >
-    \`\`\`
+    ```
   - Die Eingaben können in der 'route'-Methode verarbeitet werden, z. B.:
-    \`\`\`typescript
+    ```typescript
     const pin = request.body.pin;
-    \`\`\`
+    ```
 
 - Alternativ kann die Authentifikation direkt über das Dateisystem bearbeitet werden:
-	\`\`\`
+	```
 	\carnetes\authentication\{methode}\authentication.ts
-	\`\`\`
+	```
 
 Nach einer Anpassung ist ein Neustart des Dienstes erforderlich.
 
