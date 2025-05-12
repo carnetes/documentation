@@ -1,4 +1,4 @@
-# [CARNETES](https://carnetes.io)
+# [CARNETES](https://www.carnetes.io/)
 
 Das System **Carnetes** basiert auf einer Microservices-Architektur, die eine flexible Erweiterung durch Online-Dienste ermöglicht und spezifische Anforderungen adressiert. Ziel ist es, die Geschäftslogik zu entlasten, während IT-Sicherheit, Benutzer- und Rechteverwaltung zentral gemanagt werden. Diese Funktionen integrieren sich nahtlos in bestehende IT-Infrastrukturen und minimieren Implementierungsaufwand sowie -kosten.
 
