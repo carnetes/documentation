@@ -52,7 +52,7 @@ CARNETES ermöglicht die nahtlose Verbindung Ihrer Systeme und Datenquellen, um 
 ### Konnektivität
 CARNETES bietet eine umfassende Konnektivität, die es ermöglicht, verschiedenste Systeme und Technologien effizient miteinander zu verbinden.
 - **Breite Unterstützung:** Mit Protokollen wie SOAP, REST, MQTT und IBM MQ lassen sich moderne und klassische Systeme gleichermaßen verbinden.
-- **Industrieintegration:** Modbus und OPC UA bieten spezialisierte Anbindungen für industrielle Maschinen und SPS, während die nahtlose Integration von Datenbanken wie MsSql, Oracle und SAP R3 die geschäftsrelevanten Prozesse unterstützt.
+- **Industrieintegration:** Modbus und OPC UA bieten spezialisierte Anbindungen für industrielle Maschinen und SPS, während die nahtlose Integration von Datenbanken wie MsSql, Oracle und SAP R3 sowie SAP S4/HANA die geschäftsrelevanten Prozesse unterstützt.
 - **Effiziente Prozesskommunikation:** Die Möglichkeit, Filesysteme, FTP-Dienste und E-Mail-Systeme zu integrieren, verbessert die Zusammenarbeit über verschiedene Plattformen hinweg.
 - **IoT-Optimierung:** CARNETES schafft eine Basis für zukunftsorientierte IoT-Lösungen, bei denen Geräte in Echtzeit miteinander kommunizieren können.
 
