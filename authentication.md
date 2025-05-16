@@ -136,3 +136,75 @@ Die PIN-basierte Authentifizierung birgt potenzielle Sicherheitsrisiken, da sie 
 Dieses Beispiel dient ausschließlich der Demonstration einer möglichen Erweiterung und sollte nicht in produktiven Umgebungen eingesetzt werden, wo höhere Sicherheitsanforderungen bestehen.
 
 ---
+
+# Authorization
+
+Die Authorization spielt eine entscheidende Rolle in der Sicherheitsarchitektur von Carnetes, um sicherzustellen, dass der Zugriff auf geschützte Ressourcen streng kontrolliert und verwaltet wird. Dieses Kapitel bietet eine Übersicht über die Mechanismen zur Zugriffskontrolle, die Flexibilität von Autorisierungs-Händlern und die Möglichkeiten zur Erweiterung.
+
+---
+
+## Blocken von Zugriffen
+
+- Mit dem Authorization-Framework von Carnetes können **Zugriffe gezielt blockiert** werden, basierend auf spezifischen Bedingungen oder definierten Regeln.
+- Durch die Implementierung granularer Kontrollmechanismen wird sichergestellt, dass nur berechtigte Benutzer und Systeme Zugriff auf bestimmte Ressourcen erhalten.
+- Beispiele für blockierte Zugriffe:
+  - Ungültige oder abgelaufene Token.
+  - Fehlende Berechtigungen innerhalb eines definierten Scopes.
+  - Verstöße gegen Zugriffsbeschränkungen, die auf Benutzerrollen oder anderen Richtlinien basieren.
+
+---
+
+## Autorisierungs-Händler
+
+- **Autorisierungs-Händler** sind zentrale Bausteine im Authorization-Framework und übernehmen die Prüfung, ob eine Anfrage den geltenden Zugriffsvorgaben entspricht.
+- Sie ermöglichen die Auswertung von Berechtigungen auf Basis von:
+  - Benutzerrollen.
+  - Token-Scopes.
+  - Regeln für spezifische Ressourcen oder Endpunkte.
+
+### Flexibilität durch Erweiterbarkeit
+
+- Autorisierungs-Händler sind vollständig modular aufgebaut und können **beliebig erweitert** werden.
+- Diese Erweiterbarkeit ermöglicht die Integration unternehmensspezifischer Anforderungen oder zusätzlicher Logik für Zugriffskontrollen.
+- Neue Händler können unter Berücksichtigung der bestehenden Architektur einfach hinzugefügt werden, um spezifische Geschäftsanforderungen abzudecken.
+
+Das Authorization-Framework von Carnetes ermöglicht die einfache Erweiterung der Zugriffskontrollen durch die Erstellung und Integration eigener Autorisierungs-Händler. Diese Erweiterungen können direkt im Pfad **carnetes/authorization/** abgelegt oder über die Weboberfläche bearbeitet werden.
+
+---
+
+## Unterstützung mehrerer Autorisierungs-Händler
+
+- Jeder **OAuth-Client** kann mehrere Autorisierungs-Händler haben, um komplexe Zugriffskontrollen zu realisieren.
+- Diese Konfiguration ermöglicht es, die Anforderungen verschiedener Ressourcen oder Dienste innerhalb eines Clients individuell zu adressieren.
+- Die parallele Nutzung mehrerer Händler verbessert die Granularität und Effizienz der Zugriffskontrolle.
+
+---
+
+## Beispiel: Erweiterung der Authorization
+
+Der folgende Code zeigt, wie die Authorization erweitert werden kann. Diese Erweiterung kann unter dem Pfad **carnetes/authorization/** abgelegt werden oder über die Weboberfläche von Carnetes einfach bearbeitet werden:
+
+```typescript
+import { Injectable } from '@carnetes/core';
+import { Authorizator, OAuth2Client, Logger, OpenIDUserInfo } from '@carnetes/authorization';
+
+@Injectable()
+export class Authorization extends Authorizator {
+
+    public authorize(user: OpenIDUserInfo, client: OAuth2Client): Promise<boolean> {
+        const promise = new Promise<boolean>((resolve, reject) => {
+            try {
+                // YOUR CODE STARTS HERE
+                resolve(true);
+            } catch (exception) {
+                Logger.error(Authorization, exception);
+                reject(exception);
+            }
+        });
+        return promise;
+    }
+
+}
+```
+
+---
