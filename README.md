@@ -1,6 +1,6 @@
 # [CARNETES](https://www.carnetes.io/)
 
-Das System **Carnetes** basiert auf einer Microservices-Architektur, die eine flexible Erweiterung durch Online-Dienste ermöglicht und spezifische Anforderungen adressiert. Ziel ist es, die Geschäftslogik zu entlasten, während IT-Sicherheit, Benutzer- und Rechteverwaltung zentral gemanagt werden. Diese Funktionen integrieren sich nahtlos in bestehende IT-Infrastrukturen und minimieren Implementierungsaufwand sowie -kosten.
+Das System **Carnetes** basiert auf einer Microservices-Architektur, die eine flexible Erweiterung durch Online-Dienste ermöglicht und spezifische Anforderungen adressiert. Ziel ist es, Digitalisierung voranzutreiben, Geschäftslogik zu entlasten, während IT-Sicherheit, Benutzer- und Rechteverwaltung zentral gemanagt werden. Diese Funktionen integrieren sich nahtlos in bestehende IT-Infrastrukturen und minimieren Implementierungsaufwand sowie -kosten.
 
 Carnetes bietet Unterstützung für die Integration von **MES**, **ERP** und unterschiedlichen Hardwareumgebungen. Funktionen können mithilfe von **Functions as a Service (FaaS)** schnell implementiert werden, wodurch ereignisgesteuerte Datenverarbeitungen ermöglicht werden. Die Architektur ist vollständig online ausgelegt, was einen jederzeitigen und ortsunabhängigen Zugriff auf Geschäftscode sicherstellt.
 
